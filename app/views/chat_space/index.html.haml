@@ -1,0 +1,39 @@
+-# https://fontawesome.com/icons?d=gallery
+
+
+%menu.left-side
+  %ul.nav
+    %li.nav_my-account
+      seo
+    %li.nav_setting
+      %i.fas.fa-edit.icon
+    %li.nav_add
+      %i.fas.fa-cog.icon
+
+  %article.group
+    %h3.group_group-name
+      sample
+    %p.group_last-comment
+      Good bye work
+
+
+.right-side
+  %header.header
+    %h2.header_group-name
+      sample
+    %p.header_member
+      Members: seo, reko
+
+  %content.comment-wrap
+    %article.comment
+      %p.comment_creata
+        seo
+        %time.time 2019/02/23 22:00
+      %p.coment_text
+        sample coment text
+
+  %footer.footer
+    %form.comment-form{:action => "", :method => "parch"}
+      %input.comment-form_text{:name => "comment", :type => "text"}/
+      %i.far.fa-image.icon
+      %input.comment-form_btn{:name => "post", :type => "submit", :value => "Send"}/

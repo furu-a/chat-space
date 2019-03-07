@@ -1,0 +1,206 @@
+@import "./reset";
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #ccc;
+}
+
+header, footer {
+  clear: both;
+}
+
+$left_side_width: 300px;
+
+$left_side_interval: 20px;
+$left_side_color: #fff;
+$left_side_font_weight: bold;
+
+$right_side_interval: 40px;
+$more_info_font_size: 12px;
+$more_info_color: #999;
+$comment_color: #434A54;
+
+$notify_and_btn_color: #38AEF0;
+
+
+.left-side {
+  width: $left_side_width;
+  height: 100vh;
+  display: block;
+  background: #2f3e51;
+  float: left;
+
+  .nav {
+    width: calc(100% - ($left_side_interval * 2));
+    height: 70px;
+    padding: 0 $left_side_interval 20px;
+    display: block;
+    background: #253141;
+
+    .nav_my-account {
+      width: 160px;
+      height: 70px;
+      display: block;
+      line-height: 70px;
+      font-size: 16px;
+      color: $left_side_color;
+      font-weight: bold;
+      float: left;
+    }
+
+    .nav_setting, .nav_add {
+      width: 40px;
+      height: 70px;
+      display: block;
+      float: right;
+      color: $left_side_color;
+
+        .icon{
+          width: 40px;
+          height: 70px;
+          display: block;
+          line-height: 70px;
+        }
+    }
+  }
+
+  .group {
+    width: calc(100% - ($left_side_interval * 2));
+    height: auto;
+    display: block;
+    padding: 20px $left_side_interval 40px;
+
+    .group_group-name{
+      font-size: 15px;
+      color: $left_side_color;
+      font-weight: $left_side_font_weight;
+      margin-bottom: 5px;
+    }
+
+    .group_last-comment{
+      font-size: 11px;
+      color: $left_side_color;
+      font-weight: $left_side_font_weight;
+    }
+  }
+}
+
+.right-side {
+  width: calc(100% - 300px);
+  // width: calc(100% - $left_side_width);
+  height: 100vh;
+  display: block;
+  float: left;
+  background: #eee;
+
+  .header {
+    width: calc(100% - ($right_side_interval * 2));
+    height: auto;
+    display: block;
+    padding: 35px $right_side_interval 15px;
+    background: #fafafa;
+
+    .header_group-name {
+      font-size: 20px;
+      margin: 0 0 15px;
+    }
+
+    .header_member {
+      font-size: $more_info_font_size;
+      color: $more_info_color;
+    }
+  }
+
+  .comment-wrap {
+    width: calc(100% - ($right_side_interval * 2));
+    height: calc(100vh - 190px);
+    display: block;
+    margin: 0 $right_side_interval;
+    overflow: scroll;
+
+    .comment {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+
+        .comment_creata {
+          display: inline-block;
+          margin-right: 10px;
+          font-size: 16px;
+          color: $comment_color;
+          font-weight: bold;
+
+          .time {
+            font-size: $more_info_font_size;
+            color: $more_info_color;
+          }
+        }
+
+        .coment_text {
+          font-size: 14px;
+          color: $comment_color;
+        }
+    }
+  }
+
+
+
+  .footer {
+    width: calc(100% - ($right_side_interval * 2));
+    height: 70px;
+    display: block;
+    padding: 0 $right_side_interval;
+    background: #ccc;
+
+    .comment-form {
+      width: 100%;
+      height: 70px;
+      display: block;
+    }
+
+    .comment-form_text {
+      width: calc(100% - 160px);
+      height: 50px;
+      display: block;
+      padding: 0 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      color: $comment_color;
+      border: none;
+      float: left;
+    }
+
+    .icon {
+      position: relative;
+      top: 20px;
+      right: 30px;
+    }
+
+    .comment-form_btn {
+      width: 115px;
+      height: 50px;
+      display: block;
+      margin: 10px 0 10px 15px;
+      color: #fff;
+      border: none;
+      float: left;
+      background: $notify_and_btn_color;
+      position: relative;
+      top: -32px;
+    }
+  }
+}
+
+
+
+
+
