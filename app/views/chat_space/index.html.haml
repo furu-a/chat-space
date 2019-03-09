@@ -4,11 +4,12 @@
 %menu.left-side
   %ul.nav
     %li.nav_my-account
-      seo
+      = current_user.name
     %li.nav_setting
       %i.fas.fa-edit.icon
     %li.nav_add
-      %i.fas.fa-cog.icon
+      = link_to edit_user_path(current_user) do
+        %i.fas.fa-cog.icon
 
   %article.group
     %h3.group_group-name
