@@ -1,0 +1,13 @@
+.notification {
+  .notice {
+    background-color: $default_alert;
+    color: $alert_color;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: $log_out_alert;
+    color: $alert_color;
+    text-align: center;
+  }
+}
