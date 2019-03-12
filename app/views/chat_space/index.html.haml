@@ -2,8 +2,20 @@
 
 
 %menu.left-side
-  = render 'shared/left_side', locals: { groups: @groups }
+  %ul.nav
+    %li.nav_my-account
+      = current_user.name
+    %li.nav_setting
+      %i.fas.fa-edit.icon
+    %li.nav_add
+      = link_to edit_user_path(current_user) do
+        %i.fas.fa-cog.icon
 
+  %article.group
+    %h3.group_group-name
+      sample
+    %p.group_last-comment
+      Good bye work
 
 
 .right-side
