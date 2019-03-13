@@ -49,7 +49,7 @@ $notify_and_btn_color: #38AEF0;
     display: block;
     background: #253141;
 
-    .nav_my-account {
+    &_my-account {
       width: 160px;
       height: 70px;
       display: block;
@@ -60,7 +60,7 @@ $notify_and_btn_color: #38AEF0;
       float: left;
     }
 
-    .nav_setting, .nav_add {
+    &_setting, &_add {
       width: 40px;
       height: 70px;
       display: block;
@@ -83,14 +83,14 @@ $notify_and_btn_color: #38AEF0;
     display: block;
     padding: 20px $left_side_interval 40px;
 
-    .group_group-name{
+    &_group-name{
       font-size: 15px;
       color: $left_side_color;
       font-weight: $left_side_font_weight;
       margin-bottom: 5px;
     }
 
-    .group_last-comment{
+    &_last-comment{
       font-size: 11px;
       color: $left_side_color;
       font-weight: $left_side_font_weight;
@@ -113,12 +113,12 @@ $notify_and_btn_color: #38AEF0;
     padding: 35px $right_side_interval 15px;
     background: #fafafa;
 
-    .header_group-name {
+    &_group-name {
       font-size: 20px;
       margin: 0 0 15px;
     }
 
-    .header_member {
+    &_member {
       font-size: $more_info_font_size;
       color: $more_info_color;
     }
@@ -137,7 +137,7 @@ $notify_and_btn_color: #38AEF0;
       display: block;
       margin-bottom: 40px;
 
-        .comment_creata {
+        &_creata {
           display: inline-block;
           margin-right: 10px;
           font-size: 16px;
@@ -150,7 +150,7 @@ $notify_and_btn_color: #38AEF0;
           }
         }
 
-        .coment_text {
+        &_text {
           font-size: 14px;
           color: $comment_color;
         }
@@ -170,38 +170,40 @@ $notify_and_btn_color: #38AEF0;
       width: 100%;
       height: 70px;
       display: block;
+
+      &_text {
+        width: calc(100% - 160px);
+        height: 50px;
+        display: block;
+        padding: 0 10px;
+        margin: 10px 0;
+        font-size: 16px;
+        color: $comment_color;
+        border: none;
+        float: left;
+      }
+
+      .icon {
+        position: relative;
+        top: 20px;
+        right: 30px;
+      }
+
+      &_btn {
+        width: 115px;
+        height: 50px;
+        display: block;
+        margin: 10px 0 10px 15px;
+        color: #fff;
+        border: none;
+        float: left;
+        background: $notify_and_btn_color;
+        position: relative;
+        top: -32px;
+      }
+
     }
 
-    .comment-form_text {
-      width: calc(100% - 160px);
-      height: 50px;
-      display: block;
-      padding: 0 10px;
-      margin: 10px 0;
-      font-size: 16px;
-      color: $comment_color;
-      border: none;
-      float: left;
-    }
-
-    .icon {
-      position: relative;
-      top: 20px;
-      right: 30px;
-    }
-
-    .comment-form_btn {
-      width: 115px;
-      height: 50px;
-      display: block;
-      margin: 10px 0 10px 15px;
-      color: #fff;
-      border: none;
-      float: left;
-      background: $notify_and_btn_color;
-      position: relative;
-      top: -32px;
-    }
   }
 }
 
