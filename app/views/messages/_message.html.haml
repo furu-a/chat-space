@@ -1,0 +1,9 @@
+%article.comment
+  %p.comment_creata
+    = message.user.name
+    %time.time
+      = message.created_at
+  %p.comment_text
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url if message.image.present?

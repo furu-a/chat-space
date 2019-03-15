@@ -187,6 +187,11 @@ $notify_and_btn_color: #38AEF0;
         position: relative;
         top: 20px;
         right: 30px;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
       }
 
       &_btn {
@@ -200,6 +205,7 @@ $notify_and_btn_color: #38AEF0;
         background: $notify_and_btn_color;
         position: relative;
         top: -32px;
+        cursor: pointer;
       }
 
     }
