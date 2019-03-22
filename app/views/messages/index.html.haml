@@ -19,7 +19,9 @@
 
 
   %footer.footer
-    = form_for [@group, @message], html: {class: 'comment-form'} do |f|
+
+    = form_for [@group, @message], html: {class: 'comment-form', id: 'form'} do |f|
+
       = f.text_field :content, class: 'comment-form_text', placeholder: 'type a message'
       = f.label :image ,"&#32;".html_safe , class: 'far fa-image icon'
       = f.file_field :image, class: 'hidden'
