@@ -1,0 +1,26 @@
+-# https://fontawesome.com/icons?d=gallery
+
+
+%menu.left-side
+  = render 'shared/left_side', locals: { groups: @groups }
+
+
+
+.right-side
+  %header.header
+    %h2.header_group-name
+      = @group.name
+    %p.header_member
+      - @group.users.each do |user|
+        = user.name
+
+  %content.comment-wrap
+    = render @messages
+
+
+  %footer.footer
+    = form_for [@group, @message], html: {class: 'comment-form', id: 'form'} do |f|
+      = f.text_field :content, class: 'comment-form_text', placeholder: 'type a message'
+      = f.label :image ,"&#32;".html_safe , class: 'far fa-image icon'
+      = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'comment-form_btn'

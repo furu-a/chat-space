@@ -14,4 +14,4 @@
     = link_to edit_group_path(group), class: "group_group-name" do
       = group.name
     %p.group_last-comment
-      Good bye work
+      = group.show_last_message
