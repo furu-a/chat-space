@@ -3,7 +3,7 @@ $(function(){
   var search_list = $(".comment_wrap");
 
   function appendcomment(comment) {
-   var html = '<article class="comment">
+   var html = `<article class="comment">
                 <p class="comment_creata">
                   ${user}
                   <time class="time">
@@ -14,8 +14,8 @@ $(function(){
                   ${content}
                   <img class="image" src="${image}">
                 </p>
-              </article>'
-    search_list.append(html);
+              </article>`
+              search_list.append(html);
   }
 
    function appendErrMsgToHTML(msg) {
@@ -26,9 +26,10 @@ $(function(){
   }
 
   $('#form').on('submit', function(e){
+
     e.preventDefault();
     var formData = new FormData(this);
-    var url = "/groups/${group_id}/messages"
+    var url = $(this).attr("action");
     $.ajax({
       url: url,
       type: "POST",
@@ -38,14 +39,14 @@ $(function(){
       contentType: false
     })
 
-    .done(function(coments) {
+    .done(function(comments) {
+      console.log(comments)
       $(".comment-wrap").empty();
-      if (coments.length !== 0) {
-        coments.forEach(function(comment){
+      if (comments.length !== 0) {
+        comments.forEach(function(comment){
           appendcomment(comment);
         });
-      }
-      else {
+      } else {
         appendErrMsgToHTML("コメントが投稿できませんでした");
       }
     })
