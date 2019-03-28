@@ -2,6 +2,12 @@ class UsersController < ApplicationController
 
 
   def index
+    @user = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+
+    respond_to do |format|
+      format.html { redirect_to group_messages_path(params[:group_id]) }
+      format.json
+    end
   end
 
   def edit
