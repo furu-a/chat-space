@@ -2,10 +2,9 @@ class UsersController < ApplicationController
 
 
   def index
-    @user = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id);
 
     respond_to do |format|
-      format.html { redirect_to group_messages_path(params[:group_id]) }
       format.json
     end
   end
