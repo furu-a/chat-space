@@ -11,14 +11,23 @@
       = f.label :name, "グループ名", class: "chat-group-form__label"
     .chat-group-form__field--right
       = f.text_field :name, id: "chat_group_name", class: "chat-group-form__input"
-
   .chat-group-form__field.clearfix
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
+      = label_tag "", "チャットメンバーを追加", class: "chat-group-form__label"
     .chat-group-form__field--right
-      = f.collection_check_boxes :user_ids, User.all, :id, :name
+    .chat-group-form__search.clearfix
+      = text_field_tag "user-search-field", "", class: "chat-group-form__input", placeholder: "追加したいユーザー名を入力してください"
+
+      %ul#user-search-result
+
+    .chat-group-form__search.clearfix
+      #user-search-result チャットメンバー
+      - @group.users.each do |user|
+        = user.name
+        = hidden_field_tag '', user.id, name: 'group[user_ids][]'
+      %ul#user-list
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
