@@ -31,7 +31,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action");
-    console.log(url)
     $.ajax({
       url: url,
       type: "POST",
@@ -42,8 +41,6 @@ $(function(){
     })
 
     .done(function(comments) {
-      console.log(comments)
-      // $(".comment-wrap").empty();
       if (comments.length !== 0) {
           appendcomment(comments);
       } else {
