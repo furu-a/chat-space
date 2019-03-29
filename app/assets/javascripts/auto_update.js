@@ -1,0 +1,44 @@
+$(function(){
+
+var search_list = $("#comment_wrap");
+
+  function makeList(comment) {
+    var image = (comment.image !== null) ? `<img class="image" src="${comment.image}">` : `` ;
+    var html = `<article class="comment">
+                  <p class="comment_creata">
+                    ${comment.user}
+                    <time class="time">
+                    ${comment.created_at}
+                    </time>
+                  </p>
+                  <p class="comment_text">
+                    ${comment.content}
+                    ${image}
+                  </p>
+                </article>`
+    search_list.append(html);
+  }
+
+if(document.URL.match("messages")) {
+
+  setInterval(function() {
+    var url = location.pathname
+    var comments = $(".comment").length
+
+    $.ajax({
+      url: url,
+      type: "GET",
+      data: { count: comments },
+      dataType: 'json'
+    })
+    .done(function(messages) {
+      messages.forEach(function(message) {
+        makeList(message);
+      });
+    })
+    .fail(function(){
+      alert('error');
+    })
+  },5000);
+}
+});
