@@ -5,7 +5,7 @@ before_action :set_group
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    if @untreated = @messages.where("id > ?", "#{params[:count]}")
+    if @untreated = @messages.where("created_at > ?", "#{params[:time]}")
       respond_to do |format|
         format.html
         format.json
