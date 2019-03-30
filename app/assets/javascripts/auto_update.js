@@ -4,7 +4,7 @@ var search_list = $("#comment_wrap");
 
   function makeList(comment) {
     var image = (comment.image !== null) ? `<img class="image" src="${comment.image}">` : `` ;
-    var html = `<article class="comment">
+    var html = `<div class="comment">
                   <p class="comment_creata">
                     ${comment.user}
                     <time class="time">
@@ -15,7 +15,7 @@ var search_list = $("#comment_wrap");
                     ${comment.content}
                     ${image}
                   </p>
-                </article>`
+                </div>`
     search_list.append(html);
   }
 
