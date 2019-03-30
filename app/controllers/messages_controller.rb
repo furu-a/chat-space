@@ -6,7 +6,7 @@ before_action :set_group
     @message = Message.new
     @messages = @group.messages.includes(:user)
 
-    @untreated = Message.where("id > ?", "%#{params[:count]}%")
+    @untreated = @messages.where("id > ?", "%#{params[:count]}%")
     respond_to do |format|
       format.html
       format.json
