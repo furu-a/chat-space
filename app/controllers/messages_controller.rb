@@ -5,11 +5,11 @@ before_action :set_group
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-
-    @untreated = @messages.where("id > ?", "%#{params[:count]}%")
-    respond_to do |format|
-      format.html
-      format.json
+    if @untreated = @messages.where("id > ?", "#{params[:count]}")
+      respond_to do |format|
+        format.html
+        format.json
+      end
     end
   end
 
