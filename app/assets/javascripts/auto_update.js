@@ -23,12 +23,12 @@ if(document.URL.match("messages")) {
 
   setInterval(function() {
     var url = location.pathname
-    var created = $("time:last").text()
+    var commentId = $(".comment:last").attr("data-id")
 
     $.ajax({
       url: url,
       type: "GET",
-      data: { time: created },
+      data: { id: commentId },
       dataType: 'json'
     })
     .done(function(messages) {
