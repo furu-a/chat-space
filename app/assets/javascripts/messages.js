@@ -3,20 +3,20 @@ $(function(){
   var search_list = $("#comment_wrap");
 
   function appendcomment(comment) {
-    var html = `<article class="comment">
-            <p class="comment_creata">
-              ${comment.user}
-              <time class="time">
-              ${comment.created_at}
-              </time>
-            </p>
-            <p class="comment_text">
-              ${comment.content}
-              <img class="image" src="${comment.image}">
-            </p>
-          </article>`
-
-          search_list.append(html);
+    var image = (comment.image !== null) ? `<img class="image" src="${comment.image}">` : `` ;
+    var html = `<div class="comment">
+                  <p class="comment_creata">
+                    ${comment.user}
+                    <time class="time">
+                    ${comment.created_at}
+                    </time>
+                  </p>
+                  <p class="comment_text">
+                    ${comment.content}
+                    ${image}
+                  </p>
+                </div>`
+    search_list.append(html);
   }
 
    function appendErrMsgToHTML(msg) {
