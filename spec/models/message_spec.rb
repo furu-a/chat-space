@@ -26,19 +26,19 @@ describe Message do
       it "is valid without a content and a image" do
         message = build(:message, content: nil, image: nil)
         message.valid?
-        expect(message.errors[:content]).to require("を入力してください")
+        expect(message.errors[:content]).to include('を入力してください')
       end
 
       it "is valid without group_id" do
         message = build(:message, group_id: nil)
         message.valid?
-        expect(message.errors[:group]).to require("を入力してください")
+        expect(message.errors[:group]).to include('を入力してください')
       end
 
       it "is valid without user_id" do
         message = build(:message, user_id: nil)
         message.valid?
-        expect(message.errors[:user]).to require("を入力してください")
+        expect(message.errors[:user]).to include('を入力してください')
       end
     end
 
